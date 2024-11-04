@@ -1,7 +1,7 @@
 //We have four numbers that need to add up to 50. At least two of these numbers must be odd. No number can be larger than 25, and each number must be unique.
 // The initial numbers that must be verified.
 const n1 = 10;
-const n2 = 15;
+const n2 = 14;
 const n3 = 20;
 const n4 = 5;
 
@@ -55,11 +55,13 @@ console.log(part1_question2);
 console.log(part1_question3); // I don't know how I got 20
 
 function divideByFive(args){    
-    let temp = false;
+    let answer =false;
+    let temp = [];
     for (let index = 0; index < args.length; index++) {
-        temp = args[index] % 5 == 0 ? true : false;
+        temp.push(args[index] % 5 == 0 ? true : false); //wrong what if the last value is true then the answer is true
     }
-    return temp 
+    answer = temp.includes(false) ? false: true;
+    return answer;
 }
 
 function aGreaterThanb(a,b){
@@ -83,3 +85,5 @@ function fuelForTrip(speed1, speed2, speed3, total)
     average = (fuel1 + fuel2 + fuel3) / 3;
     return average;
 }
+
+process.exit(0);
